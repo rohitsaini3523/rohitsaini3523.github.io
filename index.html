@@ -1,52 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content= "width=device-width, initial-scale=1.0">
-  <!-- Bootstrap css -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="icon" href="profile.jpg">
-  <link rel="stylesheet" href="styles.css">
-  <title>Info</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
 </head>
+
 <body>
-  <div>
-    <p style="padding-top:10%"></p>
-    <a><img style ="border-radius:70%;" src ="photo.jpeg" alt="Profile Photo" width="200" height="200" ></a><br>
-    <p style="color: white;font: 4;">Rohit Saini</p>
-    <a href= "https://github.com/rohitsaini3523" target="_blank"> <img src="github.jfif" alt = "Github: rohitsaini3523" width = "50" height="50" ></a>
-    <a href= "https://www.codechef.com/users/mitwpu_pa6" target="_blank"> <img src="codechef.webp" alt = "Codechef: mitwpu_pa6"width = "50" height="50" ></a>
-    <a href= "https://www.hackerrank.com/rohitsaini3523" target="_blank"> <img src="hackerrank.png" alt = "hackerank: rohitsaini3523"width = "50" height="50" ></a>
-    <a href= "https://leetcode.com/rohitsaini3523/" target="_blank"> <img src="LeetCode.png" alt = "LeetCode: rohitsaini3523" width = "50" height="50"></a>
-    <a href= "mailto:rohitsaini3523@gmail.com" target="_blank"> <img src="Gmail.png" alt = "Gmail: rohitsaini3523@gmail.com" width = "50" height="50"></a>
-  </div>
-  <br>
-  <center>
-    <div class="wrapper">
-    <header>Quote of the Day</header>
-    <div class="quote-area">
-      <p class="quote" id="value">Never give up because you never know if next try is going to be the one that works.</p>
-    </div>
-    <div class="author">
-      <span>__</span>
-      <span class="name" id="author-name">Mary Kay Ash</span>
-    </div>
-  </div>
-  </center>
-  <script src="script.js"></script>
-  </body>
-  <!-- <form style="text-align:center;">
-        <hr>
-        <label for="Name" style="color: white;">Name:</label>
-        <input type="text" id="Name" name="Name">
-        <label for="Email"  style="color: white">Email:</label>
-        <input type="text" id="Email" name="Email">
-        <label for="msg"  style="color: white"> Message: </label>
-        <input type="text" id="msg" name="msg">
-        <input type ="submit" value="Submit">
-        <hr>
-    </form> -->
+    <nav id="desktop-nav">
+        <div class="logo">Rohit Saini</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo">Rohit Saini</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./assets/photo.jpeg" alt="">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello!, I'm</p>
+            <h1 class="title">Rohit Saini</h1>
+            <p class="section__text__p2">FullStack Developer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">Download CV</button>
+                <button class="btn btn-color-1" onclick="location.href = './#contact'">Contact Info</button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.webp" alt="My Linkedin Profile" class="icon"
+                    onclick="location.href='https://www.linkedin.com/in/rohit-saini-968aa91b7/'">
+                <img src="./assets/github.jfif" alt="My Github Profile" class="icon"
+                    onclick="location.href='https://github.com/rohitsaini3523'">
+                <img src="./assets/codechef.webp" alt="My CodeChef Profile" class="icon"
+                    onclick="location.href='https://www.codechef.com/users/mitwpu_pa6'">
+                <img src="./assets/hackerrank.png" alt="My Hackerrank Profile" class="icon"
+                    onclick="location.href='https://www.hackerrank.com/rohitsaini3523'">
+                <img src="./assets/LeetCode.png" alt="My Leetcode Profile" class="icon"
+                    onclick="location.href='https://leetcode.com/rohitsaini3523/'">
+            </div>
+            <center>
+                <div class="wrapper">
+                    <div class="quote-area">
+                        <p class="quote" id="value"></p>
+                    </div>
+                    <div class="author">
+                        <span>~</span>
+                        <span class="name" id="author-name"></span>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </section>
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="section__pic-container">
+                <img src="./assets/Profile.jpg" alt="Profile picture" class="about-pic" />
+            </div>
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+                        <h3>Experience</h3>
+                        <p> 6 months <br />Backend Development</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="./assets/education.png" alt="Education icon" class="icon" />
+                        <h3>Education</h3>
+                        <p>B.Tech<br />MIT World Peace University</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>
+                        Passionate software developer dedicated to crafting seamless digital solutions. Well-versed in a
+                        wide spectrum of
+                        software development areas, from
+                        front-end to back-end, with a commitment to producing optimized code and scalable software
+                        solutions. Committed to
+                        continuously learning and
+                        adapting to stay at the forefront of emerging technology trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
+    </section>
+    <section id="experience">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Frontend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>TypeScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Backend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>PostgreSQL</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>MySql</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>SpringBoot</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>Node JS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>Express JS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
+    </section>
+    <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/cloud-recovery.png" alt="Project 1" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Cloud Storage Recovery</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/rohitsaini3523/capstone'">
+                            Github
+                        </button>
+                    </div>
+                </div>
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/attendance-management.png" alt="Project 2" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Smart Attendance Using RFID</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/rohitsaini3523/Smart_Attendance_System_using_RFID'">
+                            Github
+                        </button>
+                    </div>
+                </div>
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/employee-management.jpg" alt="Project 3" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Employee Management System</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/rohitsaini3523/Employee-Management-System'">
+                            Github
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+    </section>
+    <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+                <p><a href="mailto:rohitsaini3523@gmail.com">rohitsaini3523@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.webp" alt="LinkedIn icon" class="icon contact-icon" />
+                <p><a href="https://www.linkedin.com/in/rohit-saini-968aa91b7/">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright &#169; 2024 Rohit Saini. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
 </html>
